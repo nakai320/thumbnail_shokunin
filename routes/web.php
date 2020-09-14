@@ -50,7 +50,9 @@ Route::post('/edit_profile/', 'HomeController@edit_profile');
 
 Auth::routes();
 
-Route::get('/',function(){return view("welcome");});
+Route::get('/', function () {
+    return view("welcome");
+});
 
 // Route::get('/home', 'HomeController@index')->name('home');
 // Route::post('/upload', 'HomeController@upload');
