@@ -142,11 +142,13 @@
                     <div class="card-body">
                             <div class="card-tp"><h4 class="card-title">$title</h4>
                             <p class="card-text">$price 円</p></div>
-                            <a href="/item/$id" class="btn btn-primary h-auto">詳細を見る</a>
+                            <a href="/item/$id" class="btn btn-info h-auto">詳細を見る</a>
                         </div>
                 </div> </div>
 
                 ENDF;
+
+                 // <a href="/item/$id" class="btn btn-primary h-auto">詳細を見る</a>
                 }
 
 
