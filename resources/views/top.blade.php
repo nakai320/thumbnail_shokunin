@@ -145,6 +145,7 @@
                             <a href="/item/$id" class="btn btn-success h-auto">詳細を見る</a>
                         </div>
                 </div> </div>
+                                 <a href="/item/$id" class="btn btn-primary h-auto">詳細を見る</a>
 
                 ENDF;
 
