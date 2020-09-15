@@ -1,6 +1,6 @@
-/* 自作css */
+/* 自作フロントcss */
 
-/* トップページ */
+/* ヘッダー */
     /* html,
         body {
             background-color: #fff;
@@ -10,11 +10,13 @@
             height: 100vh;
             margin: 0;
         } */
+
         .flex-center {
             align-items: center;
             display: flex;
             justify-content: space-between;
             /* justify-content: center; */
+            align-items: center;
         }
 
         /* 追加 */
@@ -33,6 +35,21 @@
         .tp-nm a:hover{
             text-decoration: none;
             color: black;
+        }
+
+        .tp-fr-btn{
+            margin: 10px 20px;
+            padding: 5px;
+            background-color: white;
+        }
+
+        .tp-vew-header{
+            box-shadow:0 0 5px grey;
+        }
+
+    
+        .form-inline{
+            margin: 0;
         }
         /* 追加終わり */
 
@@ -68,10 +85,7 @@
             margin-bottom: 30px;
         }
 
-        .container {
-            margin-top: 50px;
-        }
-
+      
         .card {
             margin-bottom: 15px;
         }
@@ -86,3 +100,18 @@
             right: 0.5rem;
             bottom: 0.5rem;
         }
+
+        /* ここから追加 */
+        /* トップ */
+          .tp-main-vew {
+              background-color:rgba(128, 128, 128, 0.3);
+              height: 50vh;
+              justify-content: center;
+              align-items: center;
+              display: flex;
+            /* margin-top: 50px; */
+
+        }
+
+        
+
