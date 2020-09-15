@@ -14,8 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('top');
+    $user = Auth::id();
+
+    $items = DB::table('uploads')
+        ->orderByRaw('id DESC')
+        // ->get();
+        // ->paginate(3);
+        ->simplePaginate(6);
+    return view(
+    'top', ['user' => $user,'items'=>$items]);
 });
+
 Route::get('/item/{id}/',
 function ($id) {
     return view('item', compact('id'));
