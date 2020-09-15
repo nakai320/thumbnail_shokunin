@@ -1,7 +1,7 @@
 /* 自作css */
 
 /* トップページ */
-    html,
+    /* html,
         body {
             background-color: #fff;
             color: #636b6f;
@@ -9,23 +9,42 @@
             font-weight: 200;
             height: 100vh;
             margin: 0;
-        }
-
+        } */
         .flex-center {
             align-items: center;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            /* justify-content: center; */
         }
 
-        .position-ref {
+        /* 追加 */
+        .tp-nm{
+            font-size: 22px;
+            margin: 15px 15px 15px 40px;
+            border: 2px solid black;
+            padding: 5px 15px;
+        }
+
+        .tp-nm a{
+            color: black;
+            text-decoration: none;
+        }
+
+        .tp-nm a:hover{
+            text-decoration: none;
+            color: black;
+        }
+        /* 追加終わり */
+
+        /* .position-ref {
             position: relative;
-        }
+        } */
 
-        .top-right {
+        /* .top-right {
             position: absolute;
             right: 10px;
             top: 18px;
-        }
+        } */
 
         .content {
             text-align: center;
@@ -63,9 +82,7 @@
         }
 
         .btn {
-
             position: absolute;
             right: 0.5rem;
             bottom: 0.5rem;
-
         }
