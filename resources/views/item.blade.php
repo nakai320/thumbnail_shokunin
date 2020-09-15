@@ -91,7 +91,7 @@
             text-align: center;
         }
 
-        i {
+        i{
             padding: 0.2rem;
         }
     </style>
@@ -180,13 +180,31 @@ ENDF;
 <tr><td><img width=100% src=../$image_read_path alt="プロフィール画像"></td></tr>
 <tr><td><h3>{$pen_name}</h3></td></tr>
 <tr><td><p><a href="/user/$user_id">この職人の作品をさらに見る≫</a></p></td></tr>
-<tr><td><i class="fa fa-twitter-square fa-2x"></i> <i class="fa fa-youtube fa-2x"></i>
-<i class="fa fa-instagram fa-2x"></i> <i class="fa fa-desktop fa-2x"></i></td></tr>
+<tr><td>
+ENDF;
+
+if(isset($twitter)){
+echo "<a href='$twitter' target='_blank'><i class='fa fa-twitter-square fa-2x'></i></a>";
+}
+
+if (isset($youtube)) {
+echo "<a href='$youtube' target='_blank'><i class='fa fa-youtube fa-2x'></i></a>";
+}
+if (isset($instagram)) {
+echo "<a href='$instagram' target='_blank'><i class='fa fa-instagram fa-2x'></i></a>";
+}
+
+if (isset($url)) {
+echo "<a href='$url' target='_blank'><i class='fa fa-desktop fa-2x'></i></a></td></tr>";
+}
+
+echo <<<ENDF
 <tr><td style="text-align: left;">{$profile_text}<td><tr>
   </table>
     </div>
 ENDF;
             }
+        
             ?>
         </div>
 

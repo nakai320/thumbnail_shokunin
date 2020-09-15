@@ -126,16 +126,17 @@
                     ->orderByRaw('id DESC')
                     ->get();
 
+                   
                 foreach ($items as $item) {
                     $path = $item->path;
                     $read_path = str_replace('public/', 'storage/', $path);
                     $id = $item->id;
                     $title = $item->tittle;
-
+                    
                     $price = $item->price;
 
                     $text = $item->text;
-
+                   
                     echo <<<ENDF
                    <div class="col-lg-4">
                     <div class="card">
