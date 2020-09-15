@@ -76,9 +76,9 @@
             padding: 0;
         }
 
-        .card-img-top{
-            width:320px;
-            height:180px;
+        .card-img-top {
+            width: 320px;
+            height: 180px;
         }
     </style>
 </head>
@@ -97,6 +97,7 @@
             <a href="{{ route('register') }}">Register</a>
             @endif
             @endauth
+            <a href="/">Top</a>
         </div>
         @endif
     </div>
@@ -121,7 +122,7 @@
 
                         $text = $item->text;
 
-                       
+
                         $id = $item->id;
                         echo <<<ENDF
                    <div class="col-lg-4">

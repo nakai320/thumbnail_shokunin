@@ -89,6 +89,7 @@
             <a href="{{ route('register') }}">Register</a>
             @endif
             @endauth
+            <a href="/">Top</a>
         </div>
         @endif
     </div>

@@ -89,6 +89,7 @@
             <a href="{{ route('register') }}">Register</a>
             @endif
             @endauth
+            <a href="/">Top</a>
         </div>
         @endif
     </div>
@@ -121,7 +122,7 @@
                     {{$user_name}}さん
                     <tr>
                         <td colspan="2">
-                            <img width=500px src=../{{$read_path}} alt="プロフィール画像">
+                            <img width=500px src=../ {{$read_path}} alt="プロフィール画像">
                         </td>
                     </tr>
                     <tr>

@@ -91,7 +91,7 @@
             text-align: center;
         }
 
-        i{
+        i {
             padding: 0.2rem;
         }
     </style>
@@ -111,6 +111,7 @@
             <a href="{{ route('register') }}">Register</a>
             @endif
             @endauth
+            <a href="/">Top</a>
         </div>
         @endif
     </div>

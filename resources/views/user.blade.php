@@ -78,15 +78,15 @@
 
         .card-body {
             display: flex;
-            position:relative;
+            position: relative;
         }
 
-        .btn{
-        
-        position: absolute;
-        right:0.5rem;
-        bottom:0.5rem;
-        
+        .btn {
+
+            position: absolute;
+            right: 0.5rem;
+            bottom: 0.5rem;
+
         }
     </style>
 </head>
@@ -105,6 +105,7 @@
             <a href="{{ route('register') }}">Register</a>
             @endif
             @endauth
+            <a href="/">Top</a>
         </div>
         @endif
     </div>
@@ -120,7 +121,7 @@
             <div class="row">
                 <?php
                 $items = DB::table('uploads')
-                ->where('user_id', $user_id)
+                    ->where('user_id', $user_id)
                     ->orderByRaw('id DESC')
                     ->get();
 
