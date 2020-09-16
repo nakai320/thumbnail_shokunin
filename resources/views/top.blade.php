@@ -58,6 +58,7 @@
                 ?>
             </div>
         </div>
+        {{ $items->links() }}
     </div>
     @endsection
     @include('layouts.footer')
