@@ -66,29 +66,22 @@
         </a>
     </div> -->
 
-    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <a href="/item/$id"><img src="images/sample.jpg" alt="サムネイル画像"></a>
-                <!-- 画像内キャプション -->
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>ここに職人の名前</h5>
-                    <p>ここに職人の説明？</p>
-                </div>
+               <img src="images/sample.jpg" alt="サムネイル画像">
             </div>
                 <?php
                 foreach ($items as $item) {
                     $path = $item->path;
                     $id = $item->id;
+                    $title = $item->tittle;
                     $read_path = str_replace('public/', 'storage/', $path);
                     echo <<< TP_CAL
-
                 <div class="carousel-item">
                     <a href="/item/$id"><img class="card-img-top" src="$read_path" alt="サムネイル画像"></a>
-                    画像内キャプション
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>ここに職人の名前</h5>
-                        <p>ここに職人の説明？</p>
+                        <h5>$title</h5>
                     </div>
                 </div>
 TP_CAL;
@@ -96,9 +89,6 @@ TP_CAL;
                 ?>
             </div>
             </div>
-
-
-
             <!-- container -->
             <div class="container">
                 <h1>サムネイル一覧</h1>
