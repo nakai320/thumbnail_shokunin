@@ -19,10 +19,14 @@ Route::get('/', function () {
     $items = DB::table('uploads')
         ->orderByRaw('id DESC')
         // ->get();
-        // ->paginate(3);
-        ->simplePaginate(6);
+        ->paginate(15);
+        
     return view(
     'top', ['user' => $user,'items'=>$items]);
+});
+Route::get('/logout', function () {
+    Auth::logout();
+    return Redirect::to('/');
 });
 
 Route::get('/item/{id}/',
