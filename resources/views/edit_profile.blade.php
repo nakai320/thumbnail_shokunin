@@ -122,7 +122,7 @@
                     {{$user_name}}さん
                     <tr>
                         <td colspan="2">
-                            <img width=500px src=../ {{$read_path}} alt="プロフィール画像">
+                            <img width=500px src=../{{$read_path}} alt="プロフィール画像">
                         </td>
                     </tr>
                     <tr>
@@ -141,7 +141,7 @@
                         <td><textarea id="profile_text" name="profile_text">{{$profile_text}}</textarea></td>
                     </tr>
                     <tr>
-                        <td>ツイッター(アカウント名を入力※@inoway023→inoway023)</td>
+                        <td>ツイッター(アカウント名を入力※@より後ろ)</td>
                         <td><input type="text" id="twitter" name="twitter" value={{$twitter}}></td>
                     </tr>
                     <tr>
