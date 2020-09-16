@@ -122,7 +122,7 @@
                     {{$user_name}}さん
                     <tr>
                         <td colspan="2">
-                            <img width=500px src=../{{$read_path}} alt="プロフィール画像">
+                            <img width=500px src=../ {{$read_path}} alt="プロフィール画像">
                         </td>
                     </tr>
                     <tr>
@@ -145,11 +145,11 @@
                         <td><input type="text" id="twitter" name="twitter" value={{$twitter}}></td>
                     </tr>
                     <tr>
-                        <td>インスタグラム</td>
+                        <td>インスタグラム(アカウント名を入力)</td>
                         <td><input type="text" id="instagram" name="instagram" value={{$instagram}}></td>
                     </tr>
                     <tr>
-                        <td>YouTube</td>
+                        <td>YouTube(チャンネルIDを入力)</td>
                         <td><input type="text" id="youtube" name="youtube" value={{$youtube}}></td>
                     </tr>
                     <tr>

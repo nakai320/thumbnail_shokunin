@@ -123,7 +123,8 @@
                 $items = DB::table('uploads')
                     ->where('user_id', $user_id)
                     ->orderByRaw('id DESC')
-                    ->get();
+                    ->paginate(15);
+
 
                 foreach ($items as $item) {
                     $path = $item->path;
@@ -155,6 +156,7 @@
 
             </div>
         </div>
+        {{ $items->links() }}
     </div>
 
 </body>

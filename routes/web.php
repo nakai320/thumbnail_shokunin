@@ -19,7 +19,7 @@ Route::get('/', function () {
     $items = DB::table('uploads')
         ->orderByRaw('id DESC')
         // ->get();
-        ->paginate(6);
+        ->paginate(15);
         
     return view(
     'top', ['user' => $user,'items'=>$items]);

@@ -169,8 +169,8 @@ ENDF;
                 $pen_name = $user->pen_name;
                 $profile_text = $user->profile_text;
                 $twitter = "https://twitter.com/".$user->twitter;
-                $instagram = $user->instagram;
-                $youtube = $user->youtube;
+                $instagram = "https://www.instagram.com/".$user->instagram;
+                $youtube = "https://www.youtube.com/".$user->youtube;
                 $url = $user->url;
 
                 echo <<<ENDF

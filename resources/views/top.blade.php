@@ -22,13 +22,7 @@
         <div class="container">
             <div class="row">
                 <?php
-                // $user = Auth::id();
-
-                // $items = DB::table('uploads')
-                //     ->orderByRaw('id DESC')
-                //     // ->get();
-                //     // ->paginate(3);
-                //     ->simplePaginate(3);
+               
 
                 foreach ($items as $item) {
                     $path = $item->path;
