@@ -13,7 +13,6 @@ class SearchController extends Controller
     //
     public function search(Request $request){
         $search = $request->search;
-        if(!isset($search))
         $user = Auth::id();
         $items = DB::table('uploads')
         ->where('tittle','LIKE','%'.$search.'%')
@@ -22,11 +21,6 @@ class SearchController extends Controller
         ->orderByRaw('id DESC')
         // ->get();
         ->paginate(15);
-
-        
-
-
-
 
         return view(
             'top',
