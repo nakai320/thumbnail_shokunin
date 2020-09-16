@@ -14,7 +14,7 @@
             height: 100vh;
             margin: 0;
         }
-/* 
+
         .flex-center {
             align-items: center;
             display: flex;
@@ -29,7 +29,7 @@
             position: absolute;
             right: 10px;
             top: 18px;
-        } */
+        }
 
         .content {
             text-align: center;
@@ -153,6 +153,38 @@ ENDF;
             }
 
             $users = DB::select("SELECT * FROM users WHERE id = {$user_id}");
+            if(!$users){
+                echo <<<ENDF
+    <div class="profile_body">
+    <table class="table table-responsive">
+<thead class="thead-lignt"><tr><th><h2>プロフィール</h2></th></tr></thead>
+<tr><td><img width=100% src="/images/no_user.jpg" alt="プロフィール画像"></td></tr>
+<tr><td><h3>{$pen_name}</h3></td></tr>
+<tr><td><p>ほかの職人に伝えるイメージとしてご活用ください</p></td></tr>
+<tr><td>
+ENDF;
+
+                if (isset($twitter)) {
+                    echo "<a href='$twitter' target='_blank'><i class='fa fa-twitter-square fa-2x'></i></a>";
+                }
+
+                if (isset($youtube)) {
+                    echo "<a href='$youtube' target='_blank'><i class='fa fa-youtube fa-2x'></i></a>";
+                }
+                if (isset($instagram)) {
+                    echo "<a href='$instagram' target='_blank'><i class='fa fa-instagram fa-2x'></i></a>";
+                }
+
+                if (isset($url)) {
+                    echo "<a href='$url' target='_blank'><i class='fa fa-desktop fa-2x'></i></a></td></tr>";
+                }
+
+                echo <<<ENDF
+<tr><td style="text-align: left;"><td><tr>
+  </table>
+    </div>
+ENDF;
+            }
             foreach ($users as $user) {
                 $image_path = $user->image_path;
                 $image_read_path = str_replace('public/', 'storage/', $image_path);
