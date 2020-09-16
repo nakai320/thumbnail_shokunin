@@ -104,14 +104,18 @@
         /* ここから追加 */
         /* トップ */
           .tp-main-vew {
-              background-color:rgba(128, 128, 128, 0.3);
-              height: 50vh;
+              background-image: url(/images/sample.jpg);
+              background-repeat: no-repeat;
+              width: 100%;
+              height: 500px;
               justify-content: center;
               align-items: center;
               display: flex;
             /* margin-top: 50px; */
-
         }
+
+
+        
 
         
 

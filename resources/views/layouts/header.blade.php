@@ -8,7 +8,7 @@
                     <label class="sr-only" for="InputEmail">メール・アドレス</label>
                     <input type="email" class="form-control" id="InputEmail" placeholder="検索">
                 </div>
-                <button type="submit" class="tp-fr-btn">送信</button>
+                <button type="submit" class="tp-fr-btn">検索</button>
             </form>
         </div>
         @if (Route::has('login'))
