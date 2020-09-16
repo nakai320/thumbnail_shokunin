@@ -142,16 +142,11 @@ ENDF;
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-            @endsection
-            @include('layouts.footer')
-=======
         </div>
         {{ $items->links() }}
     </div>
     @endsection
     @include('layouts.footer')
->>>>>>> 1874e95439d9a9c42315142e7145850f514f1b21
 </body>
 
 </html>
