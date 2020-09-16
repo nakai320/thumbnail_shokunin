@@ -24,6 +24,9 @@ Route::get('/', function () {
     return view(
     'top', ['user' => $user,'items'=>$items]);
 });
+
+
+
 Route::get('/logout', function () {
     Auth::logout();
     return Redirect::to('/');
@@ -36,11 +39,11 @@ function ($id) {
         $user_id = $item->user_id;
         $pen_names = DB::select("SELECT * FROM users WHERE id = {$user_id}");
         foreach($pen_names as $pen_name){
-           $penname = $pen_name->pen_name;
+           $pen_name = $pen_name->pen_name;
         }
         }
         
-    return view('item', compact('id'),['penname'=>$penname]);
+    return view('item', compact('id'),['pen_name'=>$pen_name]);
 });
 
 Route::get(
