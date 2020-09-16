@@ -31,8 +31,18 @@ Route::get('/logout', function () {
 
 Route::get('/item/{id}/',
 function ($id) {
-    return view('item', compact('id'));
+        $items = DB::select("SELECT * FROM uploads WHERE id = {$id}");
+        foreach($items as $item){
+        $user_id = $item->user_id;
+        $pen_names = DB::select("SELECT * FROM users WHERE id = {$user_id}");
+        foreach($pen_names as $pen_name){
+           $penname = $pen_name->pen_name;
+        }
+        }
+        
+    return view('item', compact('id'),['penname'=>$penname]);
 });
+
 Route::get(
     '/edit_item/{id}/',
     function ($id) {

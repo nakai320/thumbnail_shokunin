@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.template')
 
 <head>
-    <meta charset="utf-8">
+    @section('title',$penname);
+
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!-- <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-    <!-- Styles -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -18,8 +18,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <style>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
+    <!-- <style>
         html,
         body {
             background-color: #fff;
@@ -91,15 +91,17 @@
             text-align: center;
         }
 
-        i{
+        i {
             padding: 0.2rem;
         }
-    </style>
+    </style> -->
 </head>
 
 
 <body>
-    <div class="flex-center position-ref full-height">
+    @include('layouts.header')
+    @section('content')
+    <!-- <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
         <div class="top-right links">
             @auth
@@ -114,7 +116,7 @@
             <a href="/">Top</a>
         </div>
         @endif
-    </div>
+    </div> -->
     <div class="container">
         <h1>サムショク</h1>
         <p>サムショクはYouTuberとサムネイル職人をつなぐサイトです。<br>
@@ -124,7 +126,6 @@
 
         <div class="content">
             <?php
-
             $items = DB::select("SELECT * FROM uploads WHERE id = {$id}");
             foreach ($items as $item) {
                 $path = $item->path;
@@ -134,7 +135,6 @@
                 $text = $item->text;
                 $user_name = $item->user_name;
                 $user_id = $item->user_id;
-
 
 
                 echo <<<ENDF
@@ -168,9 +168,9 @@ ENDF;
                 $image_read_path = str_replace('public/', 'storage/', $image_path);
                 $pen_name = $user->pen_name;
                 $profile_text = $user->profile_text;
-                $twitter = "https://twitter.com/".$user->twitter;
-                $instagram = "https://www.instagram.com/".$user->instagram;
-                $youtube = "https://www.youtube.com/".$user->youtube;
+                $twitter = "https://twitter.com/" . $user->twitter;
+                $instagram = "https://www.instagram.com/" . $user->instagram;
+                $youtube = "https://www.youtube.com/" . $user->youtube;
                 $url = $user->url;
 
                 echo <<<ENDF
@@ -183,28 +183,28 @@ ENDF;
 <tr><td>
 ENDF;
 
-if(isset($twitter)){
-echo "<a href='$twitter' target='_blank'><i class='fa fa-twitter-square fa-2x'></i></a>";
-}
+                if (isset($twitter)) {
+                    echo "<a href='$twitter' target='_blank'><i class='fa fa-twitter-square fa-2x'></i></a>";
+                }
 
-if (isset($youtube)) {
-echo "<a href='$youtube' target='_blank'><i class='fa fa-youtube fa-2x'></i></a>";
-}
-if (isset($instagram)) {
-echo "<a href='$instagram' target='_blank'><i class='fa fa-instagram fa-2x'></i></a>";
-}
+                if (isset($youtube)) {
+                    echo "<a href='$youtube' target='_blank'><i class='fa fa-youtube fa-2x'></i></a>";
+                }
+                if (isset($instagram)) {
+                    echo "<a href='$instagram' target='_blank'><i class='fa fa-instagram fa-2x'></i></a>";
+                }
 
-if (isset($url)) {
-echo "<a href='$url' target='_blank'><i class='fa fa-desktop fa-2x'></i></a></td></tr>";
-}
+                if (isset($url)) {
+                    echo "<a href='$url' target='_blank'><i class='fa fa-desktop fa-2x'></i></a></td></tr>";
+                }
 
-echo <<<ENDF
+                echo <<<ENDF
 <tr><td style="text-align: left;">{$profile_text}<td><tr>
   </table>
     </div>
 ENDF;
             }
-        
+
             ?>
         </div>
 
@@ -212,6 +212,5 @@ ENDF;
 
 
     </div>
-</body>
-
-</html>
+    @endsection
+    @include('layouts.footer')

@@ -137,6 +137,3 @@ ENDF;
     </div>
     @endsection
     @include('layouts.footer')
-</body>
-
-</html>
