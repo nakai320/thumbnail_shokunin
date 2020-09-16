@@ -69,7 +69,7 @@
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <a href="/item/$id"><img src="images/sample.jpg" alt="サムネイル画像"></a>
+                <img src="images/sample.jpg" alt="サムネイル画像">
                 <!-- 画像内キャプション -->
                 <div class="carousel-caption d-none d-md-block">
                     <h5>ここに職人の名前</h5>

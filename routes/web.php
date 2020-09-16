@@ -24,6 +24,9 @@ Route::get('/', function () {
     return view(
     'top', ['user' => $user,'items'=>$items]);
 });
+
+
+
 Route::get('/logout', function () {
     Auth::logout();
     return Redirect::to('/');
