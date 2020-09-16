@@ -168,7 +168,7 @@ ENDF;
                 $image_read_path = str_replace('public/', 'storage/', $image_path);
                 $pen_name = $user->pen_name;
                 $profile_text = $user->profile_text;
-                $twitter = $user->twitter;
+                $twitter = "https://twitter.com/".$user->twitter;
                 $instagram = $user->instagram;
                 $youtube = $user->youtube;
                 $url = $user->url;

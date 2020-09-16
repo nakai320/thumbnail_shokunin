@@ -141,7 +141,7 @@
                         <td><textarea id="profile_text" name="profile_text">{{$profile_text}}</textarea></td>
                     </tr>
                     <tr>
-                        <td>ツイッター</td>
+                        <td>ツイッター(アカウント名を入力※@inoway023→inoway023)</td>
                         <td><input type="text" id="twitter" name="twitter" value={{$twitter}}></td>
                     </tr>
                     <tr>
