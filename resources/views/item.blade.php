@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 <head>
-    @section('title',$penname);
+    @section('title',$pen_name);
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- <meta charset="utf-8">

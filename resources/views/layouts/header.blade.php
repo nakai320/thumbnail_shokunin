@@ -2,7 +2,7 @@
 <header class="tp-vew-header">
     <div class="flex-center position-ref full-height">
         <h2 >
-            <a href="/"><img src="images/logo.png"></a>
+            <a href="/"><img src="/images/logo.png"></a>
     </h2>
         <div>
             <form class="form-inline">
