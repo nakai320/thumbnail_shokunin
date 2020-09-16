@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Redirect;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
@@ -80,8 +81,9 @@ class HomeController extends Controller
 
         $id = $request->input('delete_data');
 
+
         DB::table('users')->where('id', '=', $id)->delete();
-        return view('/top');
+        return Redirect::to('/');
     }
     
 }

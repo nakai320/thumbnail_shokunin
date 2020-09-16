@@ -43,7 +43,11 @@ function ($id) {
         $pen_names = DB::select("SELECT * FROM users WHERE id = {$user_id}");
         foreach($pen_names as $pen_name){
            $pen_name = $pen_name->pen_name;
+               
         }
+            if (!isset($pen_name)) {
+                    $pen_name ='退会したユーザーです';
+                } 
         }
         
     return view('item', compact('id'),['pen_name'=>$pen_name]);
