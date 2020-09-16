@@ -165,7 +165,7 @@
                 </form>
                 </td>
                 <td>
-                    <form method="POST" action="/delete" enctype="multipart/form-data">
+                    <form method="POST" action="/delete_profile" enctype="multipart/form-data">
 
                         <input type="hidden" name="delete_data" value="{{$id}}">
                         <input class="btn btn-danger" type="submit" name='delete' value="削除" onclick="return confirm('本当に削除しますか？')">

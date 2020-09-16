@@ -133,8 +133,13 @@
                 $title = $item->tittle;
                 $price = $item->price;
                 $text = $item->text;
-                $user_name = $item->user_name;
+                if(isset($item->user_name)){
+                    $user_name = $item->user_name;
+                }else{
+                $user_name = '退会したユーザーです';
+            }
                 $user_id = $item->user_id;
+                
 
 
                 echo <<<ENDF

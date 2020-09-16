@@ -75,5 +75,13 @@ class HomeController extends Controller
         ]);
         return view('/home');
     }
+    public function delete(Request $request)
+    {
+
+        $id = $request->input('delete_data');
+
+        DB::table('users')->where('id', '=', $id)->delete();
+        return view('/top');
+    }
     
 }
