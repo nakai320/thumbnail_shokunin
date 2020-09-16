@@ -43,6 +43,7 @@ Route::post('/edit_item/{id}/','UploadController@edit'
     
 );
 Route::post('/delete/','UploadController@delete');
+Route::post('/delete_profile/', 'HomeController@delete');
 
 Route::get('/home/', function () {
     return view('home');
