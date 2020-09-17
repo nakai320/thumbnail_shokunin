@@ -5,10 +5,11 @@
             <a href="/"><img src="/images/logo.png"></a>
     </h2>
         <div>
-            <form class="form-inline" action="/">
+            <form class="form-inline" action="/" method="post">
+            @csrf
                 <div class="form-group">
                     <label class="sr-only" for="InputEmail"></label>
-                    <input type="email" class="form-control" id="InputEmail" name="search" placeholder="検索">
+                    <input type="text" class="form-control" id="InputEmail" name="search" placeholder="検索">
                 </div>
                 <button type="submit" class="tp-fr-btn">検索</button>
             </form>

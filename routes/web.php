@@ -26,6 +26,9 @@ Route::get('/', function () {
 });
 
 
+Route::post('/','SearchController@search');  //トップページ検索
+
+
 
 Route::get('/logout', function () {
     Auth::logout();
