@@ -3,7 +3,7 @@
 <head>
     @section('title','作品一覧')
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 
     <style>
@@ -70,7 +70,7 @@
                 $items = DB::table('uploads')
                     ->where('user_id', $user_id)
                     ->orderByRaw('id DESC')
-                    ->paginate(15);
+                    ->paginate(6);
 
 
                 foreach ($items as $item) {

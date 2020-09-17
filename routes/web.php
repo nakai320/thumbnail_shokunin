@@ -19,7 +19,7 @@ Route::get('/', function () {
     $items = DB::table('uploads')
         ->orderByRaw('id DESC')
         // ->get();
-        ->paginate(15);
+        ->paginate(6);
         
     return view(
     'top', ['user' => $user,'items'=>$items]);
@@ -67,8 +67,19 @@ Route::get('/home/', function () {
 });
 
 Route::get('/item_all/',function () {
-    return view('item_all');
+    $user = Auth::id();
+
+    $items = DB::table('uploads')
+        ->orderByRaw('id DESC')
+        ->paginate(6);
+
+    return view(
+        'item_all',
+        ['user' => $user, 'items' => $items]
+    );
 });
+
+
 
 Route::get('/user/{user_id}/', function ($user_id) {
     return view('user', compact('user_id'));

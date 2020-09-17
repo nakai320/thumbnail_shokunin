@@ -4,6 +4,7 @@
     @section('title',$pen_name)
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         html,
         body {
@@ -118,13 +119,13 @@
                 $title = $item->tittle;
                 $price = $item->price;
                 $text = $item->text;
-                if(isset($item->user_name)){
+                if (isset($item->user_name)) {
                     $user_name = $item->user_name;
-                }else{
-                $user_name = '退会したユーザーです';
-            }
+                } else {
+                    $user_name = '退会したユーザーです';
+                }
                 $user_id = $item->user_id;
-                
+
 
 
                 echo <<<ENDF
@@ -153,7 +154,7 @@ ENDF;
             }
 
             $users = DB::select("SELECT * FROM users WHERE id = {$user_id}");
-            if(!$users){
+            if (!$users) {
                 echo <<<ENDF
     <div class="profile_body">
     <table class="table table-responsive">
