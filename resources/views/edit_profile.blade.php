@@ -18,7 +18,11 @@
     $users = DB::select("SELECT * FROM users WHERE id = {$user_id}");
     foreach ($users as $user) {
         $image_path = $user->image_path;
-        $read_path = str_replace('public/', 'storage/', $image_path);
+        if (isset($image_path)) {
+            $read_path = str_replace('public/', 'storage/', $image_path);
+        } else {
+            $read_path = 'images/no_img.jpg';
+        }
         $pen_name = $user->pen_name;
         $profile_text = $user->profile_text;
         $twitter = $user->twitter;

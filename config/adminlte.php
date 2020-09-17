@@ -234,7 +234,7 @@ return [
        
        
         
-        ['header' => 'account_settings'],
+       
         [
             'text' => 'profile',
             'url'  => 'edit_profile',
