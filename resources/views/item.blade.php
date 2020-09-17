@@ -159,7 +159,7 @@ ENDF;
     <div class="profile_body">
     <table class="table table-responsive">
 <thead class="thead-lignt"><tr><th><h2>プロフィール</h2></th></tr></thead>
-<tr><td><img width=100% src="/images/no_user.jpg" alt="プロフィール画像"></td></tr>
+<tr><td><img width=100% src="/images/no_user.jpg" alt="プロフィール画像" class="rounded-circle"></td></tr>
 <tr><td><h3>{$pen_name}</h3></td></tr>
 <tr><td><p>ほかの職人に伝えるイメージとしてご活用ください</p></td></tr>
 <tr><td>
@@ -200,7 +200,7 @@ ENDF;
     <div class="profile_body">
     <table class="table table-responsive">
 <thead class="thead-lignt"><tr><th><h2>プロフィール</h2></th></tr></thead>
-<tr><td><img width=100% src=../$image_read_path alt="プロフィール画像"></td></tr>
+<tr><td><img width=100% src=../$image_read_path alt="プロフィール画像" class="rounded-circle"></td></tr>
 <tr><td><h3>{$pen_name}</h3></td></tr>
 <tr><td><p><a href="/user/$user_id">この職人の作品をさらに見る≫</a></p></td></tr>
 <tr><td>
