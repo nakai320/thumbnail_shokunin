@@ -11,6 +11,8 @@
             margin: 0;
         } */
 
+        
+
         .flex-center {
             align-items: center;
             display: flex;
@@ -114,8 +116,29 @@
               display: flex;
             /* margin-top: 50px; */
         }
+        #slide_bg{
+            margin: 1rem auto;
+            background-color: rgb(6, 96, 170);
+            display: flex;
+        }
+        #slide_side{
+            background-color: #FFF;
+            padding: 1rem;
+             margin: auto auto;
 
+        }
+        .slide_img{
+            width:600px;
+            height:337.5px;
+        }
 
+        #carouselExampleIndicators{
+            margin: 0 auto;
+        }
+
+.container{
+    padding-top: 2px;
+}
         
 
         
