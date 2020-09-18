@@ -11,43 +11,67 @@
     @include('layouts.header')
     @section('content')
 
-    <!-- <div class="tp-main-vew">
-        <div class="tp-main-tt">
-            <h1>サムショク</h1>
-            <p>サムショクはYouTuberとサムネイル職人をつなぐサイトです。<br>
-                仲介手数料０円！お好きなサムネイルがあったら、職人に直接連絡を取ることができます。</p>
-        </div>
-    </div> -->
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/sample.jpg" alt="サムネイル画像">
-                <!-- 画像内キャプション -->
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>ここに職人の名前</h5>
-                    <p>ここに職人の説明？</p>
+    <div id="slide_bg">
+        <div id="slide_side" class="rounded shadow">
+            <p>サムショクは、サムネイル職人とYouTuberをつなぐサイトです。</p>
+            <p>SNSを通じて直接やり取りできるので<br>
+                仲介手数料は掛かりません。</p>
+            <p>サムネイル職人の方へ>> <a href="/register">新規登録</a> or <a href="/login">ログイン</a></p>
+            <p>YouTuberの方へ>> 登録不要でご利用できます。<br>
+                お好きな雰囲気のサムネイルを見つけてください。</p>
+
+
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:600px">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="slide_img" src="images/sample.jpg" alt="サムネイル画像">
+                    <!-- 画像内キャプション -->
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5></h5>
+                        <p>ここに職人の説明？</p>
+                    </div>
                 </div>
-            </div>
-            <?php
-            foreach ($items as $item) {
-                $path = $item->path;
-                $id = $item->id;
-                $read_path = str_replace('public/', 'storage/', $path);
-                echo <<< TP_CAL
+                <?php
+                foreach ($items as $item) {
+                    $path = $item->path;
+                    $id = $item->id;
+                    $read_path = str_replace('public/', 'storage/', $path);
+                    $user_id = $item->user_id;
+                    $pen_names = DB::select("SELECT * FROM users WHERE id = {$user_id}");
+                    foreach ($pen_names as $pen_name) {
+                        $pen_name = $pen_name->pen_name;
+                    }
+                    if (!isset($pen_name)) {
+                        $pen_name = '退会したユーザーです';
+                    }
+                }
+
+                    echo <<< TP_CAL
 
                 <div class="carousel-item">
-                    <a href="/item/$id"><img class="card-img-top" src="$read_path" alt="サムネイル画像"></a>
+                    <a href="/item/$id"><img class="card-img-top slide_img" src="$read_path" alt="サムネイル画像"></a>
                  
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>ここに職人の名前</h5>
+                        <h5>$pen_name</h5>
                         <p>ここに職人の説明？</p>
                     </div>
                 </div>
 TP_CAL;
-            }
-            ?>
+                }
+                ?>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+
     </div>
     <!-- container -->
     <div class="container">

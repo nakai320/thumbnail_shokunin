@@ -55,7 +55,7 @@
                 </tr>
                 <tr>
                     <td>プロフィール文</td>
-                    <td><textarea id="profile_text" name="profile_text">{{$profile_text}}</textarea></td>
+                    <td><textarea id="profile_text" name="profile_text" rows="8" cols="40">{{$profile_text}}</textarea></td>
                 </tr>
                 <tr>
                     <td>ツイッター(アカウント名を入力※@より後ろ)</td>
