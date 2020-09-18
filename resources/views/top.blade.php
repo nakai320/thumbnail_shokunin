@@ -23,30 +23,29 @@
 
 
         </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width:600px">
+        <div id="carouselExampleIndicators" class="carousel slide" data-interval="2000" data-ride="carousel" style="width:600px">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="slide_img" src="images/sample.jpg" alt="サムネイル画像">
                     <!-- 画像内キャプション -->
                     <div class="carousel-caption d-none d-md-block">
-                        <h5></h5>
-                        <p>ここに職人の説明？</p>
+                        <h5>一枚目</h5>
+                        <p>一枚目の説明</p>
                     </div>
                 </div>
                 <?php
-                foreach ($items as $item) {
+                $all_items = DB::select("SELECT * FROM uploads");
+                shuffle($all_items);
+                foreach ($all_items as $item) {
                     $path = $item->path;
                     $id = $item->id;
                     $read_path = str_replace('public/', 'storage/', $path);
-                    $user_id = $item->user_id;
-                    $pen_names = DB::select("SELECT * FROM users WHERE id = {$user_id}");
-                    foreach ($pen_names as $pen_name) {
-                        $pen_name = $pen_name->pen_name;
-                    }
-                    if (!isset($pen_name)) {
-                        $pen_name = '退会したユーザーです';
-                    }
-                }
+                    $title = $item->tittle;
+                    $price = $item->price;
+                    $text = $item->text;
+
+
+
 
                     echo <<< TP_CAL
 
@@ -54,12 +53,13 @@
                     <a href="/item/$id"><img class="card-img-top slide_img" src="$read_path" alt="サムネイル画像"></a>
                  
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>$pen_name</h5>
-                        <p>ここに職人の説明？</p>
+                        <h5>$title</h5>
+                        <p>$text</p>
                     </div>
                 </div>
 TP_CAL;
                 }
+
                 ?>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
