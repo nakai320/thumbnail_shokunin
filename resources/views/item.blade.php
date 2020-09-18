@@ -1,67 +1,10 @@
 @extends('layouts.template')
 
 <head>
-    @section('title',$pen_name)
-
+    @section('title','TOP')
+    <!-- 自作フロントcss/js -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links>a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-
-        .container {
-            margin-top: 50px;
-        }
-
-        .col-lg-4 {
-            padding: 0;
-        }
-
         .content {
             display: flex;
         }
@@ -80,13 +23,20 @@
         i {
             padding: 0.2rem;
         }
-    </style>
-</head>
 
+        @media(max-width:991px) {
+            .content {
+                display: block;
+            }
+        }
+    </style>
+    <script src="{{asset('js/style.js')}}"></script>
+</head>
 
 <body>
     @include('layouts.header')
     @section('content')
+
     <!-- <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
         <div class="top-right links">

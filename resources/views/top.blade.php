@@ -23,12 +23,12 @@
 
 
         </div>
-        <div id="carouselExampleIndicators" class="carousel slide" data-interval="2000" data-ride="carousel" style="width:600px">
+        <div id="carouselExampleIndicators" class="carousel slide" data-interval="2500" data-ride="carousel" style="width:600px">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="slide_img" src="images/sample.jpg" alt="サムネイル画像">
                     <!-- 画像内キャプション -->
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-none d-md-block rounded shadow">
                         <h5>一枚目</h5>
                         <p>一枚目の説明</p>
                     </div>
@@ -52,7 +52,7 @@
                 <div class="carousel-item">
                     <a href="/item/$id"><img class="card-img-top slide_img" src="$read_path" alt="サムネイル画像"></a>
                  
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-none d-md-block rounded shadow">
                         <h5>$title</h5>
                         <p>$text</p>
                     </div>
