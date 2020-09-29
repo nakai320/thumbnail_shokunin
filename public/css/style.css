@@ -124,7 +124,7 @@
         #slide_side{
             background-color: #FFF;
             padding: 1rem;
-             margin: auto auto;
+            margin: auto auto;
 
         }
         .slide_img{
@@ -138,6 +138,12 @@
 
 .container{
     padding-top: 2px;
+}
+.carousel-caption{
+   
+     background-color:rgba(0, 0, 0, 0.432);
+            padding: 1rem;
+            margin: auto 0;
 }
         
 
