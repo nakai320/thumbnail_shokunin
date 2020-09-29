@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 <head>
-    @section('title','TOP')
+    @section('title',$pen_name)
     <!-- 自作フロントcss/js -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <style>
