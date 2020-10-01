@@ -1,44 +1,11 @@
 @section('header')
 <header class="tp-vew-header">
-    <!-- <div class="flex-center position-ref full-height">
-        <h2>
-            <a href="/"><img src="/images/logo.png"></a>
-        </h2>
-        <div>
-            <form class="form-inline" action="/" method="post"> -->
-    <!-- @if (Route::has('login'))
-    <div class="top-right links">
-        @auth
-        <a href="{{ url('/home') }}">Home</a>
-        <a href="{{ url('/logout') }}">Logout</a>
-        @else
-        <a href="{{ route('login') }}">Login</a>
-        @if (Route::has('register'))
-        <a href="{{ route('register') }}">Register</a>
-        @endif
-        @endauth
-        <a href="/">Top</a>
-    </div>
-    @endif -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/"><img src="/images/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul> -->
-
+        
         @if (Route::has('login'))
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
